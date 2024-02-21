@@ -6,9 +6,10 @@
       "request": "launch",
       "name": "디버깅",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\src\\index.ts",
-      "runtimeArgs": ["-r", "ts-node/register"],
-      "sourceMaps": true
+      "program": "${workspaceFolder}\\src\\cli.ts",
+      "runtimeArgs": ["-r", "ts-node/register", "--loader", "ts-node/esm"],
+      "sourceMaps": true,
+      "console": "integratedTerminal"
     }
   ]
 }
