@@ -1,7 +1,13 @@
-import lowdb from 'lowdb';
-import FileSync from 'lowdb/adapters/FileSync';
+import { JSONFileSyncPreset } from 'lowdb/node';
 import { join } from 'path';
+import { __dirname } from '../utils/path.util.js';
 
-const db = lowdb(new FileSync(join(__dirname, '../../', './storage/db.json')));
+const defaultData = {
+  infras: [],
+  querys: [],
+  snippets: [],
+};
+
+const db = JSONFileSyncPreset(join(__dirname, '../../', './storage/db.json'), defaultData);
 
 export default db;

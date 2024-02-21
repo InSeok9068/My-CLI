@@ -1,5 +1,8 @@
-import { join } from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const getFileStorage = (path: string) => join(__dirname, '../../storage/files', path);
 
-export { getFileStorage };
+export { __dirname, getFileStorage };

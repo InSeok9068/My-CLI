@@ -1,4 +1,4 @@
-export const TABLE_ENUM = {
+export const Table = {
   INFRAS: 'infras',
 } as const;
-export type TABLE_ENUM = (typeof TABLE_ENUM)[keyof typeof TABLE_ENUM];
+export type Table = (typeof Table)[keyof typeof Table];
