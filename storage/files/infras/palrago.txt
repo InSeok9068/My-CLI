@@ -1,0 +1,3 @@
+SELECT *       
+FROM MB_MST    
+WHERE USER_NAME = '문준태';

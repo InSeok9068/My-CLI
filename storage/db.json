@@ -1,0 +1,5 @@
+{
+  "infras": [{ "key": "palrago", "name": "팔라고" }],
+  "querys": [{ "key": "palrago" }],
+  "snippets": []
+}
