@@ -1,5 +1,25 @@
 {
-  "infras": [{ "key": "palrago", "name": "팔라고" }],
-  "querys": [{ "key": "palrago" }],
+  "auth": {
+    "id": "inseok",
+    "pw": "inseok",
+    "ok": true
+  },
+  "infras": [
+    {
+      "key": "palrago",
+      "name": "팔라고",
+      "isFile": true,
+      "filePath": "infras/palrago.md"
+    }
+  ],
+  "querys": [
+    {
+      "key": "query1",
+      "name": "이상회원 확인",
+      "isFile": true,
+      "filePath": "querys/query1.md",
+      "params": ["유저아이디를 입력해주세요."]
+    }
+  ],
   "snippets": []
 }
