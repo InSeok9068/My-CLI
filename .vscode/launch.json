@@ -7,7 +7,7 @@
       "name": "디버깅",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\src\\cli.ts",
-      "runtimeArgs": ["-r", "ts-node/register", "--loader", "ts-node/esm"],
+      "runtimeArgs": ["--loader", "ts-node/esm"],
       "sourceMaps": true,
       "console": "integratedTerminal"
     }
