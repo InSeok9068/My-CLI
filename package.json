@@ -23,6 +23,7 @@
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
     "inquirer-autocomplete-standalone": "^0.8.1",
+    "listr2": "^8.0.2",
     "lowdb": "^7.0.1",
     "marked": "^12.0.0",
     "marked-terminal": "^7.0.0",
