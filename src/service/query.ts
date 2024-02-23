@@ -1,5 +1,6 @@
 import { input, select } from '@inquirer/prompts';
 import fs from 'fs-extra';
+import isEmpty from 'validator/lib/isEmpty.js';
 import db from '../configs/db.config.js';
 import { marked } from '../configs/marked.config.js';
 import { getFileStorage } from '../utils/path.util.js';
@@ -21,14 +22,13 @@ const queryAction = async () => {
       for (let i = 0; i < query.params.length; i++) {
         const answer = await input({
           message: query.params[i],
+          validate: (value) => !isEmpty(value),
         });
         answers.push(answer);
       }
     }
 
     let result = fs.readFileSync(getFileStorage(query.filePath!), 'utf-8');
-
-    console.log(result);
 
     for (let i = 0; i < answers.length; i++) {
       result = result.replace(`#param${i + 1}`, answers[i]);

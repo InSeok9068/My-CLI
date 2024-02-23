@@ -1,5 +1,6 @@
 import { input, password } from '@inquirer/prompts';
 import chalk from 'chalk';
+import isEmpty from 'validator/lib/isEmpty.js';
 import db from '../configs/db.config.js';
 
 const login = async () => {
@@ -8,9 +9,11 @@ const login = async () => {
   if (!auth.ok) {
     const id = await input({
       message: '아이디를 입력해주세요.',
+      validate: (value) => !isEmpty(value),
     });
     const pw = await password({
       message: '비밀번호 입력해주세요.',
+      validate: (value) => !isEmpty(value),
     });
     if (auth.id !== id || auth.pw !== pw) {
       console.log(chalk.red(chalk.bold('인증이 실패하였습니다.')));
