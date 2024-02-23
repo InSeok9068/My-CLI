@@ -21,6 +21,7 @@
     "commander": "^12.0.0",
     "figlet": "^1.7.0",
     "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
     "inquirer-autocomplete-standalone": "^0.8.1",
     "lowdb": "^7.0.1",
     "marked": "^12.0.0",
