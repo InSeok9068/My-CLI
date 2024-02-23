@@ -2,7 +2,7 @@
   "auth": {
     "id": "inseok",
     "pw": "inseok",
-    "ok": false
+    "ok": true
   },
   "infras": [
     {
