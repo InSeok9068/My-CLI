@@ -19,9 +19,10 @@
       "isFile": true,
       "filePath": "querys/query1.md",
       "params": [
-        "유저아이디를 입력해주세요."
+        {
+          "message": "유저아이디를 입력해주세요."
+        }
       ]
     }
-  ],
-  "snippets": []
+  ]
 }

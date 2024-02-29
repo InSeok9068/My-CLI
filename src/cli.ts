@@ -6,7 +6,6 @@ import figlet from 'figlet';
 import db from './configs/db.config.js';
 import { login, resetAuth } from './service/auth.js';
 import { infraAction } from './service/infra.js';
-import { palragoServerCheck } from './service/palrago-check.js';
 import { queryAction } from './service/query.js';
 import { Table } from './types/table.type.js';
 
@@ -47,7 +46,5 @@ program
   .action((options) => {
     resetAuth(options.id, options.pw);
   });
-
-program.command('palrago check').action(() => palragoServerCheck());
 
 program.parse(process.argv);

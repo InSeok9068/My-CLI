@@ -16,21 +16,23 @@ export interface Auth {
 export interface InfraTable extends BaseTable {}
 
 export interface QueryTable extends BaseTable {
-  params: string[];
+  params?: QueryParam[];
 }
 
-export interface SnippetTable extends BaseTable {}
+export interface QueryParam {
+  message: string;
+  type: 'string' | 'number' | 'url';
+  default: string;
+}
 
 export interface DatabaseType {
   auth: Auth;
   infras: InfraTable[];
   querys: QueryTable[];
-  snippets: SnippetTable[];
 }
 
 export const Table = {
   INFRA: 'infras',
   QUERY: 'querys',
-  SNIPPET: 'snippets',
 } as const;
 export type Table = (typeof Table)[keyof typeof Table];
