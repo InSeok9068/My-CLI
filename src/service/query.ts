@@ -23,7 +23,7 @@ const queryAction = async () => {
         const answer = await input({
           message: query.params[i].message,
           validate: function (value) {
-            switch (query.params[i].type) {
+            switch (query.params![i].type) {
               case 'string':
                 return isEmpty(value);
               case 'number':
