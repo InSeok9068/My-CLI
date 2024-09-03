@@ -4,6 +4,13 @@
     "pw": "inseok",
     "ok": true
   },
+  "develop": [],
+  "deploy": [
+    {
+      "key": "merge_request_production",
+      "name": "운영 배포 Merge Request"
+    }
+  ],
   "infras": [
     {
       "key": "palrago",
@@ -18,11 +25,22 @@
       "name": "이상회원 확인",
       "isFile": true,
       "filePath": "querys/query1.md",
-      "params": [
-        {
-          "message": "유저아이디를 입력해주세요."
-        }
-      ]
+      "params": ["유저아이디를 입력해주세요."]
+    },
+    {
+      "key": "query2",
+      "name": "파트너사 별 가입자",
+      "isFile": true,
+      "filePath": "querys/query2.md",
+      "params": ["최근 몇일까지 보시겠습니까?"]
+    },
+    {
+      "key": "query3",
+      "name": "날짜 변환",
+      "isFile": true,
+      "filePath": "querys/query3.md",
+      "params": ["변환할 날짜를 입력해주세요. (YYYYMMDD)"]
     }
-  ]
+  ],
+  "snippets": []
 }

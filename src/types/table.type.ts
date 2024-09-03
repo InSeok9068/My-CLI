@@ -13,26 +13,28 @@ export interface Auth {
   ok: boolean;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface InfraTable extends BaseTable {}
 
 export interface QueryTable extends BaseTable {
-  params?: QueryParam[];
+  params: string[];
 }
 
-export interface QueryParam {
-  message: string;
-  type: 'string' | 'number' | 'url';
-  default: string;
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface SnippetTable extends BaseTable {}
 
 export interface DatabaseType {
   auth: Auth;
   infras: InfraTable[];
   querys: QueryTable[];
+  snippets: SnippetTable[];
 }
 
 export const Table = {
+  DEVELOP: 'develop',
+  DEPLOY: 'deploy',
   INFRA: 'infras',
   QUERY: 'querys',
+  SNIPPET: 'snippets',
 } as const;
 export type Table = (typeof Table)[keyof typeof Table];

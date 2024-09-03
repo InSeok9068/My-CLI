@@ -9,8 +9,5 @@
     "skipLibCheck": true,
     "moduleResolution": "node"
   },
-  "ts-node": {
-    "experimentalSpecifierResolution": "node",
-    "esm": true
-  }
+  "exclude": ["playground.ts"]
 }

@@ -18,21 +18,11 @@ const queryAction = async () => {
 
   const answers: string[] = [];
   if (query.isFile) {
-    if (query.params && query.params.length > 0) {
+    if (query.params.length > 0) {
       for (let i = 0; i < query.params.length; i++) {
         const answer = await input({
-          message: query.params[i].message,
-          validate: function (value) {
-            switch (query.params![i].type) {
-              case 'string':
-                return isEmpty(value);
-              case 'number':
-                return !isNaN(Number(value));
-              default:
-                return true;
-            }
-          },
-          default: query.params[i].default,
+          message: query.params[i],
+          validate: (value) => !isEmpty(value),
         });
         answers.push(answer);
       }

@@ -5,7 +5,10 @@ import { program } from 'commander';
 import figlet from 'figlet';
 import db from './configs/db.config.js';
 import { login, resetAuth } from './service/auth.js';
+import { deployAction } from './service/deploy.js';
+import { developAction } from './service/develop.js';
 import { infraAction } from './service/infra.js';
+import { palragoServerCheck } from './service/palrago-check.js';
 import { queryAction } from './service/query.js';
 import { Table } from './types/table.type.js';
 
@@ -20,6 +23,7 @@ program
         message: '선택해주세요!',
         choices: Object.keys(db.data)
           .filter((table) => table !== 'auth')
+          .filter((table) => (process.env.NODE_ENV !== 'dev' ? table != 'develop' : true))
           .map((table) => ({
             name: table,
             value: table,
@@ -27,6 +31,12 @@ program
       });
 
       switch (answer) {
+        case Table.DEVELOP:
+          await developAction();
+          break;
+        case Table.DEPLOY:
+          await deployAction();
+          break;
         case Table.INFRA:
           await infraAction();
           break;
@@ -46,5 +56,11 @@ program
   .action((options) => {
     resetAuth(options.id, options.pw);
   });
+
+program
+  .command('palrago')
+  .command('check')
+  .requiredOption('-e, --env <env>', 'prod | qa', 'prod')
+  .action((options) => palragoServerCheck(options.env));
 
 program.parse(process.argv);

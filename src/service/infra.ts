@@ -6,7 +6,7 @@ import { getFileStorage } from '../utils/path.util.js';
 
 const infraAction = async () => {
   const answer = await select({
-    message: '인프라',
+    message: '쿼리',
     choices: db.data.infras.map((infra) => ({
       name: infra.name,
       value: infra.key,
